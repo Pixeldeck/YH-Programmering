@@ -7,8 +7,10 @@ public class Main {
         Scanner sc1 = new Scanner(System.in);
         String again;
 
+        // Main
 
-        do {  // Main
+        do {
+
 
 
             System.out.println("Vad vill du göra?");
@@ -19,10 +21,10 @@ public class Main {
 
             System.out.println("Skriv ditt val: ");
 
-            String val1 = sc1.nextLine();
+            String val = sc1.nextLine();
 
 
-            if (val1.equals("1")) {
+            if (val.equals("1")) {
 
                 System.out.println("Skriv in första siffran:");
                 double nummer1 = sc1.nextDouble();
@@ -35,14 +37,18 @@ public class Main {
 
                 again = sc1.nextLine();
 
-            } else if (val1.equals("2")) {
+            } else if (val.equals("2")) {
                 dubbletter(sc1);
 
 
+            } else if (val.equals("3"))  {
+                boolean answer = isPalindromReversedString(sc1);
+                System.out.println("Ordet bakvänt: " + answer);
             }
 
 
-            System.out.println("Vill du se en tabell till? (j/n) ");
+            System.out.println("Vill du se menyn igen?  (j = ja, e = nej) (j/e) ");
+
             again = sc1.nextLine();
 
 
@@ -64,6 +70,8 @@ public class Main {
         String ord = sc1.nextLine();
         System.out.print("Ange bokstaven du vill leta efter: ");
         char bokstav = sc1.nextLine().charAt(0);
+        System.out.println("Det finns: "  + bokstav);
+
 
         int antal = 0;
         for (int i = 0; i < ord.length(); i++) {
@@ -77,7 +85,20 @@ public class Main {
 
     }
 
-}
+    static boolean isPalindromReversedString(Scanner sc1)  {
+        StringBuilder builder = new StringBuilder();
+        System.out.println("Skriv in ett ord: ");
+        String input = sc1.nextLine();
 
+        builder.append(sc1);
+        String reversedString = builder.reverse().toString();
+
+        return input.equals(reversedString);
+
+
+    }
+
+
+}
 
 
