@@ -42,7 +42,12 @@ public class Main {
 
 
             } else if (val.equals("3"))  {
-                boolean answer = isPalindromReversedString(sc1);
+
+                System.out.println("Skriv in ett ord: ");
+
+                String input = sc1.nextLine();
+
+                boolean answer = isPalindromReversedString(input);
                 System.out.println("Ordet bakvänt: " + answer);
             }
 
@@ -64,7 +69,6 @@ public class Main {
     }
 
     private static void dubbletter(Scanner sc1) {
-        sc1.nextLine();
 
         System.out.print("Ange ordet du vill leta i: ");
         String ord = sc1.nextLine();
@@ -85,12 +89,10 @@ public class Main {
 
     }
 
-    static boolean isPalindromReversedString(Scanner sc1)  {
+    static boolean isPalindromReversedString(String input)  {
         StringBuilder builder = new StringBuilder();
-        System.out.println("Skriv in ett ord: ");
-        String input = sc1.nextLine();
 
-        builder.append(sc1);
+        builder.append(input);
         String reversedString = builder.reverse().toString();
 
         return input.equals(reversedString);
