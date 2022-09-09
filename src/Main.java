@@ -68,23 +68,28 @@ public class Main {
         return plus;
     }
 
-    private static void dubbletter(Scanner sc1) {
+    private static void dubbletter(Scanner userInput) {
+        userInput.nextLine();
 
         System.out.print("Ange ordet du vill leta i: ");
-        String ord = sc1.nextLine();
+        String ord = userInput.nextLine();
         System.out.print("Ange bokstaven du vill leta efter: ");
-        char bokstav = sc1.nextLine().charAt(0);
-        System.out.println("Det finns: "  + bokstav);
-
+        char bokstav = userInput.nextLine().charAt(0);
 
         int antal = 0;
-        for (int i = 0; i < ord.length(); i++) {
-            if (ord.charAt(i) == bokstav) {
+        for (int i = 0; i < ord.length(); i++)
+        {
+            if (ord.charAt(i) == bokstav)
+            {
                 antal++;
             }
-
-
         }
+
+        System.out.format("Det finns %dx %s i ordet %s.\n", antal, bokstav, ord);
+
+
+
+
 
 
     }
